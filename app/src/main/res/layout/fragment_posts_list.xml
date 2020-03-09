@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.sergiocrespotoubes.viewstatesswitcherlib.ViewStatesSwitcher
+        android:id="@+id/viewStatesSwitcher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:gravity="center_vertical"
+        custom:state="loading"
+        tools:state="idle"
+        custom:successView="@+id/serviceList"
+        custom:emptyView="@+id/empty"
+        custom:errorView="@+id/error"
+        custom:loadingView="@+id/loading">
+
+    </com.sergiocrespotoubes.viewstatesswitcherlib.ViewStatesSwitcher>
+
+</RelativeLayout>
