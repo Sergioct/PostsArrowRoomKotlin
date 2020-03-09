@@ -1,28 +1,17 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util
 
-data class Resource<out T>(
-    val status: Status,
-    val data: Any?,
-    val message: String = ""
-) {
+sealed class Resource<out T, out E> {
+	class Success<out T> internal constructor(val value: T) : Resource<T, Nothing>()
 
-    enum class Status {
-        SUCCESS,
-        ERROR,
-        LOADING
-    }
+	class Error<out E> internal constructor(val value: E) : Resource<Nothing, E>()
 
-    companion object {
-        fun <T> success(data: T): Resource<T> {
-            return Resource(Status.SUCCESS, data, "")
-        }
+	object Loading : Resource<Nothing, Nothing>()
 
-        fun <T> error(data: Throwable? = null, message: String = ""): Resource<T> {
-            return Resource(Status.ERROR, data, message)
-        }
+	companion object {
+		fun <T> success(value: T) = Success(value)
 
-        fun <T> loading(): Resource<T> {
-            return Resource(Status.LOADING, null, "")
-        }
-    }
+		fun <E> error(value: E) = Error(value)
+
+		fun loading() = Loading
+	}
 }

@@ -23,10 +23,12 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.FindPosts
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Resource
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import kotlinx.android.synthetic.main.fragment_posts_list.*
 import kotlinx.coroutines.Dispatchers
+import org.koin.android.ext.android.inject
 
 class PostsListViewModel(
-    val findPosts: FindPosts
+	private val findPosts: FindPosts
 ) : ViewModel() {
 
     val postsResourceObs = MutableLiveData<Resource<List<Post>, Throwable>>()
@@ -38,7 +40,7 @@ class PostsListViewModel(
     private fun loadPosts() {
 		postsResourceObs.value = Resource.loading()
         findPosts.invoke().continueOn(Dispatchers.Main).effectMap { posts ->
-				postsResourceObs.value = Resource.success(posts)
+				//postsResourceObs.value
             }.handleError {
 				postsResourceObs.value = Resource.error(it)
             }.unsafeRunAsync {}
@@ -120,11 +122,7 @@ class PostsListFragment : Fragment() {
         }
     }
 
-    private fun loadServicesGroupSpecialtyTypes(servicesGroupTypesListModel: ServicesGroupTypesListModel) {
-        /*val action =
-            ServicesGroupSpecialtiesListFragmentDirections.actionServicesGroupSpecialtiesListFragmentToServicesGroupTypesListFragment(
-                servicesGroupTypesListModel
-            )
-        findNavController().navigate(action)*/
-    }
+    /*private fun laodPost(postModel: PostModel) {
+
+    }*/
 }

@@ -13,35 +13,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import arrow.fx.extensions.io.async.effectMap
-import arrow.fx.handleError
-import coil.api.load
-import com.jakewharton.rxbinding3.view.clicks
-import com.saludonnet.pacientes.R
-import com.saludonnet.pacientes.data.network.context.surgery.ServicesGroupService
-import com.saludonnet.pacientes.data.network.models.ServicesGroupDetail
-import com.saludonnet.pacientes.data.network.models.ServiceGroup
-import com.saludonnet.pacientes.managers.ViewUtils
-import com.saludonnet.pacientes.managers.gone
-import com.saludonnet.pacientes.ui.base.BaseFragment
-import com.saludonnet.pacientes.ui.base.BaseViewModel
-import com.saludonnet.pacientes.ui.services_group.ServicesGroupActivity
-import com.saludonnet.pacientes.ui.services_group.provinces_list.ServicesGroupProvincesListModel
-import com.saludonnet.pacientes.util.Resource2
-import com.saludonnet.pacientes.util.SpecialtyId
-import com.saludonnet.pacientes.util.SpecialtyName
-import com.saludonnet.pacientes.util.live_data.Event
-import com.saludonnet.pacientes.util.live_data.EventObserver
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
-import de.mateware.snacky.Snacky
 import kotlinx.android.parcel.Parcelize
-import kotlinx.android.synthetic.main.fragment_services_group_detail.*
+import kotlinx.android.synthetic.main.fragment_post_detail.*
 import kotlinx.coroutines.Dispatchers
-import org.koin.android.ext.android.get
 import org.koin.core.parameter.parametersOf
 
 @Parcelize
@@ -56,7 +33,7 @@ class ServicesGroupDetailViewModel(
     val servicesGroupService: ServicesGroupService
 ) : BaseViewModel() {
 
-    val surgeryResourceObs = MutableLiveData<Resource2<ServicesGroupDetail, Throwable>>()
+    val surgeryResourceObs = MutableLiveData<Resource<ServicesGroupDetail, Throwable>>()
     val loadProvincesListObs = MutableLiveData<Event<ServicesGroupProvincesListModel>>()
 
     fun onResume() {
