@@ -14,10 +14,10 @@
         android:gravity="center_vertical"
         custom:state="loading"
         tools:state="idle"
-        custom:successView="@+id/serviceList"
-        custom:emptyView="@+id/empty"
-        custom:errorView="@+id/error"
-        custom:loadingView="@+id/loading">
+        custom:successView="@+id/rv_posts"
+        custom:emptyView="@+id/include_posts_empty"
+        custom:errorView="@+id/include_posts_error"
+        custom:loadingView="@+id/include_posts_loading">
         
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_posts"
@@ -25,6 +25,10 @@
             android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_post"/>
+
+        <include android:id="@+id/include_posts_empty" layout="@layout/include_posts_empty"/>
+        <include android:id="@+id/include_posts_loading" layout="@layout/include_posts_loading"/>
+        <include android:id="@+id/include_posts_error" layout="@layout/include_posts_error"/>
 
     </com.sergiocrespotoubes.viewstatesswitcherlib.ViewStatesSwitcher>
 

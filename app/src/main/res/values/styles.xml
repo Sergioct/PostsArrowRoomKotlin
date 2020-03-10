@@ -8,4 +8,37 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Texts -->
+
+    <style name="PostsTitle" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PostsSubtitle" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="PostsListTitle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PostsListSubtitle" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="PostsInfoText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="PostsButton" parent="Base.Widget.AppCompat.ActionButton">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -2,6 +2,7 @@ package com.sergiocrespotoubes.postsarrowroomkotlin.data.repository
 
 import androidx.lifecycle.LiveData
 import arrow.fx.IO
+import arrow.fx.extensions.fx
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.dao.PostsDao
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.Post
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.PostsService
@@ -27,12 +28,10 @@ class PostRepositoryImpl(
 	private val postsService: PostsService
 ): PostRepository {
 
-	override fun findPosts(): IO<LiveData<List<Post>>> {
+	override fun findPosts(): IO<LiveData<List<Post>>> = IO.fx {
 		val findPostsResponse = !postsService.findPosts()
-
 		postsDao.insert(findPostsResponse.posts)
-
-		return IO.just(postsDao.findPosts())
+		postsDao.findPosts()
 	}
 
 	override fun findPostById(): IO<FindPostById.Response> {
