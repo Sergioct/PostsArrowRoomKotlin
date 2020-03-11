@@ -1,7 +1,7 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.commands
 
 import arrow.fx.IO
-import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.Post
+import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.models.PostApi
 
 /**
  * Created by Sergio Crespo Toubes on 10/02/2020.
@@ -17,7 +17,7 @@ interface FindPosts {
 	fun findPosts(): IO<Response>
 
 	data class Response(
-		val posts: List<Post> = emptyList()
+		val posts: List<PostApi> = emptyList()
 	)
 
 }

@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:custom="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.sergiocrespotoubes.viewstatesswitcherlib.ViewStatesSwitcher
         android:id="@+id/vss_posts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:gravity="center_vertical"
         custom:state="loading"
         tools:state="idle"
@@ -18,7 +17,7 @@
         custom:emptyView="@+id/include_posts_empty"
         custom:errorView="@+id/include_posts_error"
         custom:loadingView="@+id/include_posts_loading">
-        
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_posts"
             android:layout_width="match_parent"
@@ -27,8 +26,8 @@
             tools:listitem="@layout/item_post"/>
 
         <include android:id="@+id/include_posts_empty" layout="@layout/include_posts_empty"/>
-        <include android:id="@+id/include_posts_loading" layout="@layout/include_posts_loading"/>
         <include android:id="@+id/include_posts_error" layout="@layout/include_posts_error"/>
+        <include android:id="@+id/include_posts_loading" layout="@layout/include_posts_loading"/>
 
     </com.sergiocrespotoubes.viewstatesswitcherlib.ViewStatesSwitcher>
 

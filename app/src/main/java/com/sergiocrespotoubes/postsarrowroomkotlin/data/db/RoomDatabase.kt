@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.dao.PostsDao
-import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.Post
+import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.PostDb
 
 /**
  * Created by Sergio Crespo Toubes on 10/02/2020.
@@ -13,7 +13,7 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.Post
  *     www.SergioCrespoToubes.com
  */
 @Database(entities = [
-	Post::class
+	PostDb::class
 ],
 	version = 1,
 	exportSchema = false)

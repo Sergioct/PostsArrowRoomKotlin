@@ -50,3 +50,13 @@ capp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/repository/P
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
+š
+japp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/ui/posts/list/PostsListFragment.kt,5\c\5c74f302fb5bb8eaf28457ef13e7116d0a2ddbbe
+U
+%app/src/main/res/drawable/ic_help.xml,7\a\7ae40f0bef90db95cb920dea95de5e316ed1dc19
+R
+"app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
+S
+#app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
+R
+"app/src/main/res/values/styles.xml,f\7\f79cc2688e29fcbc286fda14ae07b27c9e83690f

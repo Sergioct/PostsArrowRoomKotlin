@@ -5,4 +5,5 @@ package com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util
  *     SergioCrespoToubes@gmail.com
  *     www.SergioCrespoToubes.com
  */
-//typealias Price = (Double)
+typealias Name = String
+typealias Email = String

@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.Post
+import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.PostDb
 
 /**
  * Created by Sergio Crespo Toubes on 10/02/2020.
@@ -16,10 +16,10 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.Post
 interface PostsDao {
 
 	@Query("SELECT * from posts")
-	fun findPosts(): LiveData<List<Post>>
+	fun findPosts(): LiveData<List<PostDb>>
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	fun insert(products: List<Post>)
+	fun insert(products: List<PostDb>)
 
 	@Query("DELETE FROM posts")
 	fun deleteAll()

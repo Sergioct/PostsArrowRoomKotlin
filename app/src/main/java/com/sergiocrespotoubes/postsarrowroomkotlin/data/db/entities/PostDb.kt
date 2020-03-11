@@ -5,7 +5,7 @@ package com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities
  *     SergioCrespoToubes@gmail.com
  *     www.SergioCrespoToubes.com
  */
-class Post (
+data class PostDb (
 	val userId: Int,
 	val id : Int,
 	val title: String,
