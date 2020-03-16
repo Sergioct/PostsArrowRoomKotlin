@@ -1,6 +1,7 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.posts.list
 
 import com.sergiocrespotoubes.postsarrowroomkotlin.R
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import kotlinx.android.synthetic.main.item_post.*
@@ -12,8 +13,8 @@ import kotlinx.android.synthetic.main.item_post.*
  */
 
 class PostItem(
-	val post: PostDb,
-	val onItemClick: (PostDb) -> Unit
+	val post: Post,
+	val onItemClick: (Post) -> Unit
 ) : Item() {
 
 	override fun getLayout() = R.layout.item_post

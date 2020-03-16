@@ -12,11 +12,13 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.entities.PostDb
  *     SergioCrespoToubes@gmail.com
  *     www.SergioCrespoToubes.com
  */
-@Database(entities = [
-	PostDb::class
-],
+@Database(
+	entities = [
+		PostDb::class
+	],
 	version = 1,
-	exportSchema = false)
+	exportSchema = false
+)
 //@TypeConverters(DateConverters::class)
 abstract class PostsRoomDatabase : RoomDatabase() {
 

@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import arrow.fx.extensions.io.applicativeError.handleError
 import arrow.fx.extensions.io.async.effectMap
 import com.sergiocrespotoubes.postsarrowroomkotlin.R
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.use_case.FindPosts
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Resource
 import com.xwray.groupie.GroupAdapter
@@ -30,7 +31,7 @@ class PostsListViewModel(
 	private val findPosts: FindPosts
 ) : ViewModel() {
 
-    val postsResourceObs = MutableLiveData<Resource<List<PostDb>, Throwable>>()
+    val postsResourceObs = MutableLiveData<Resource<List<Post>, Throwable>>()
 
     fun onResume() {
         loadPosts()
@@ -45,7 +46,7 @@ class PostsListViewModel(
             }.unsafeRunAsync {}
     }
 
-    fun onPostSelect(post: PostDb) {
+    fun onPostSelect(post: Post) {
 
     }
 }
@@ -91,7 +92,7 @@ class PostsListFragment : Fragment() {
         vModel.onResume()
     }
 
-    private fun loadSurgerySpecialtyResource(servicesGroupSpecialtyResource: Resource<List<PostDb>, Throwable>) {
+    private fun loadSurgerySpecialtyResource(servicesGroupSpecialtyResource: Resource<List<Post>, Throwable>) {
         when (servicesGroupSpecialtyResource) {
             is Resource.Success -> {
                 loadPosts(servicesGroupSpecialtyResource.value)
@@ -105,7 +106,7 @@ class PostsListFragment : Fragment() {
         }
     }
 
-    private fun loadPosts(posts: List<PostDb>) {
+    private fun loadPosts(posts: List<Post>) {
         groupAdapter.clear()
         val specialtiesItems = posts.map { post ->
             PostItem(post) {

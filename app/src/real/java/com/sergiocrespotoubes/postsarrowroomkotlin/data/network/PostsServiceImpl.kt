@@ -1,5 +1,6 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.data.network
 
+import arrow.fx.IO
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.PostsService
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.commands.FindAnswers
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.commands.FindCommentsFromPlaces
@@ -27,19 +28,19 @@ class PostsServiceImpl() : PostsService, KoinComponent {
 
 	}
 
-	override suspend fun findPlaces(): FindPosts.Response {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+	override fun findPosts(): IO<FindPosts.Response> {
+		TODO("Not yet implemented")
 	}
 
-	override suspend fun findPlaceById(): FindPostById.Response {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+	override fun findPostById(): IO<FindPostById.Response> {
+		TODO("Not yet implemented")
 	}
 
-	override suspend fun findCommentsFromPlaces(): FindCommentsFromPlaces.Response {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+	override fun findCommentsFromPosts(): IO<FindCommentsFromPlaces.Response> {
+		TODO("Not yet implemented")
 	}
 
-	override suspend fun findAnswers(): FindAnswers.Response {
-		TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+	override fun findAnswers(): IO<FindAnswers.Response> {
+		TODO("Not yet implemented")
 	}
 }

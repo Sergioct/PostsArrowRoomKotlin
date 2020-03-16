@@ -6,10 +6,9 @@ apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.sergiocrespotoubes.postsarrowroomkotlin"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -45,6 +44,15 @@ android {
     }
     lintOptions {
         disable 'CheckResult'
+        disable 'ContentDescription'
+        abortOnError false
+    }
+    testOptions {
+        animationsDisabled = true
+        unitTests.returnDefaultValues = true
+        unitTests.all {
+            useJUnitPlatform()
+        }
     }
 }
 
@@ -143,6 +151,10 @@ dependencies {
 
     // RxBinding https://github.com/JakeWharton/RxBinding
     implementation "com.jakewharton.rxbinding3:rxbinding:3.1.0"
+
+    // Animations https://github.com/daimajia/AndroidViewAnimations
+    implementation "com.daimajia.easing:library:2.1@aar"
+    implementation "com.daimajia.androidanimations:library:2.3@aar"
 
     androidExtensions {
         experimental = true

@@ -19,7 +19,7 @@ interface PostsDao {
 	fun findPosts(): LiveData<List<PostDb>>
 
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	fun insert(products: List<PostDb>)
+	fun insert(posts: List<PostDb>)
 
 	@Query("DELETE FROM posts")
 	fun deleteAll()
