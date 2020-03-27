@@ -2,9 +2,13 @@ package com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.posts
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import com.sergiocrespotoubes.postsarrowroomkotlin.R
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.splash.SplashViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.include_appbar.*
 
 /**
  * Created by Sergio Crespo Toubes on 10/02/2020.
@@ -13,13 +17,24 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  */
 class PostsActivity : AppCompatActivity() {
 
-	private val vModel: SplashViewModel by viewModel()
+	private lateinit var appBarConfiguration: AppBarConfiguration
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_posts)
+		loadAppbar()
+	}
 
-		vModel.initViewModel()
+	private fun loadAppbar() {
+		val navController = findNavController(R.id.nav_host_fragment)
+		appBarConfiguration = AppBarConfiguration(navController.graph)
+		setSupportActionBar(toolbar)
+
+		val abc = AppBarConfiguration.Builder().build()
+		NavigationUI.setupActionBarWithNavController(this, navController, abc)
+		AppBarConfiguration.Builder().setFallbackOnNavigateUpListener {
+			super.onSupportNavigateUp()
+		}.build()
 	}
 
 }

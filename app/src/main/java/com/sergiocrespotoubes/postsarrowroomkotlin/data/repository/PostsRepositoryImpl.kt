@@ -16,7 +16,7 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
  *     www.SergioCrespoToubes.com
  */
 
-class PostRepositoryImpl(
+class PostsRepositoryImpl(
 	private val postsDao: PostsDao,
 	private val postsService: PostsService
 ): PostsRepository {

@@ -34,7 +34,7 @@ class PostsListViewModel(
     val postsResourceObs = MutableLiveData<Resource<List<Post>, Throwable>>()
 
     fun onResume() {
-        loadPosts()
+        //loadPosts()
     }
 
     private fun loadPosts() {
@@ -80,11 +80,7 @@ class PostsListFragment : Fragment() {
     }
 
     private fun loadObservers() {
-        vModel.postsResourceObs.observe(requireActivity(), Observer { resource ->
-            resource?.let {
-                loadSurgerySpecialtyResource(it)
-            }
-        })
+        //vModel.postsResourceObs.observe(requireActivity(), Observer(::loadSurgerySpecialtyResource))
     }
 
     override fun onResume() {

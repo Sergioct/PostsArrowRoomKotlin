@@ -15,7 +15,7 @@ import org.koin.core.context.startKoin
  *     SergioCrespoToubes@gmail.com
  *     www.SergioCrespoToubes.com
  */
-class AppApplication : Application() {
+class PostsApplication : Application() {
 
 	override fun onCreate() {
 		super.onCreate()
@@ -27,7 +27,7 @@ class AppApplication : Application() {
 	private fun initKoin() {
 		startKoin {
 			androidLogger()
-			androidContext(this@AppApplication)
+			androidContext(this@PostsApplication)
 			// androidFileProperties()
 			modules(
 				listOf(

@@ -31,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
 
 		loadViews()
 		loadObservers()
-		vModel.initViewModel()
+		vModel.initViewModel().unsafeRunAsync {  }
 	}
 
 	private fun loadViews() {

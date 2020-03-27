@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation_places">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_posts"
+    app:startDestination="@id/postsListFragment">
 
+    <fragment
+        android:id="@+id/postsListFragment"
+        android:name="com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.posts.list.PostsListFragment"
+        android:label="PostsListFragment"
+        tools:layout="@layout/fragment_posts_list"/>
 </navigation>
