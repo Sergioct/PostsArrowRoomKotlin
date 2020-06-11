@@ -11,8 +11,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import arrow.fx.extensions.io.applicativeError.handleError
@@ -34,13 +36,16 @@ class PostsListViewModel(
     val postsResourceObs = MutableLiveData<Resource<List<Post>, Throwable>>()
 
     fun onResume() {
-        //loadPosts()
+        loadPosts()
     }
 
     private fun loadPosts() {
 		postsResourceObs.value = Resource.loading()
         findPosts.invoke().continueOn(Dispatchers.Main).effectMap { posts ->
-				//postsResourceObs.value
+				val x: LiveData<Resource<List<Post>, Throwable>> = Transformations.map(posts) { listPostDb ->
+					Resource.success(listPostDb)
+				}
+				postsResourceObs.value = Resource.success(posts)
             }.handleError {
 				postsResourceObs.value = Resource.error(it)
             }.unsafeRunAsync {}

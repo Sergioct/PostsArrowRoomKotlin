@@ -26,11 +26,6 @@ import javax.net.ssl.X509TrustManager
  *     www.SergioCrespoToubes.com
  */
 val networkModule = module {
-
-	factory<PostsService> {
-		PostsServiceImpl()
-	}
-
 	single {
 		val gson: Gson = GsonBuilder().create()
 		Retrofit.Builder()

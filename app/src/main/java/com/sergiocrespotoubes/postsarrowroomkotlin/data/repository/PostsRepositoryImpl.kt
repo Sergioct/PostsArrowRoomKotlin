@@ -9,6 +9,7 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.Po
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.PostsRepository
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Comment
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
+import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Resource
 
 /**
  * Created by Sergio Crespo Toubes on 09/03/2020.

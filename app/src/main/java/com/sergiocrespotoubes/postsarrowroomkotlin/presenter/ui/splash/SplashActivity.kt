@@ -19,7 +19,7 @@ import splitties.activities.start
  *     www.SergioCrespoToubes.com
  */
 
-const val SPLASH_ANIMATION_TIME = 300L
+const val SPLASH_ANIMATION_TIME = 600L
 
 class SplashActivity : AppCompatActivity() {
 
@@ -35,7 +35,8 @@ class SplashActivity : AppCompatActivity() {
 	}
 
 	private fun loadViews() {
-		YoYo.with(Techniques.ZoomInUp)
+		YoYo.with(Techniques.ZoomIn)
+			.pivot(YoYo.CENTER_PIVOT, YoYo.CENTER_PIVOT)
 			.duration(SPLASH_ANIMATION_TIME)
 			.repeatMode(YoYo.INFINITE)
 			.playOn(iv_logo)

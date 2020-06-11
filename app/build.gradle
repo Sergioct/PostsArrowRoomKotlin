@@ -54,13 +54,19 @@ android {
             useJUnitPlatform()
         }
     }
+    variantFilter { variant ->
+        // We have not use release version with mock flavor
+        if(variant.buildType.name == "mockRelease") {
+            variant.setIgnore(true)
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.1.0'
     testImplementation 'junit:junit:4.13'
@@ -73,9 +79,9 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "com.google.android.material:material:1.2.0-alpha05"
-    implementation 'com.google.android.play:core:1.7.1'
-    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation "com.google.android.material:material:1.2.0-beta01"
+    implementation 'com.google.android.play:core:1.7.3'
+    implementation 'androidx.core:core-ktx:1.3.0'
 
     // Navigation  https://developer.android.com/guide/navigation/
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -114,7 +120,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
     androidTestImplementation "androidx.test.espresso:espresso-intents:3.2.0"
     androidTestImplementation "com.agoda.kakao:kakao:2.2.0"
-    debugImplementation 'androidx.fragment:fragment-testing:1.2.3'
+    debugImplementation 'androidx.fragment:fragment-testing:1.2.4'
     debugImplementation 'androidx.test:core:1.2.0'
 
     // Koin https://github.com/InsertKoinIO/koin

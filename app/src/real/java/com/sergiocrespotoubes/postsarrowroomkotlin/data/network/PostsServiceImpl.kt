@@ -18,13 +18,15 @@ import retrofit2.Retrofit
 class PostsServiceImpl : PostsService, KoinComponent {
 
 	val retrofit : Retrofit by inject()
-	private val postsServiceApi: PostsServiceApi
+	//private val postsServiceApi: PostsServiceApi
 
 	init {
-		postsServiceApi = retrofit.create(PostsServiceApi::class.java)
+		//postsServiceApi = retrofit.create(PostsServiceApi::class.java)
 	}
 
-	private interface PostsServiceApi
+	private interface PostsServiceApi {
+
+	}
 
 	override fun findPosts(): IO<FindPosts.Response> {
 		TODO("Not yet implemented")

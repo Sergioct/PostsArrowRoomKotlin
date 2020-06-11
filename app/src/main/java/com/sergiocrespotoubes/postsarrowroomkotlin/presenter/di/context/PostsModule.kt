@@ -21,8 +21,8 @@ val postsModule = module {
 	viewModel { PostsListViewModel(get()) }
 
 	factory { getDatabase(get()).postsDao() }
-	factory<PostsService> { PostsServiceImpl() }
 	factory<PostsRepository> { PostsRepositoryImpl(get(), get()) }
+	factory<PostsService> { PostsServiceImpl() }
 	factory { FindPosts(get()) }
 	factory { FindAnswers(get()) }
 }
