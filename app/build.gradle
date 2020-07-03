@@ -5,11 +5,11 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.sergiocrespotoubes.postsarrowroomkotlin"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -161,6 +161,9 @@ dependencies {
     // Animations https://github.com/daimajia/AndroidViewAnimations
     implementation "com.daimajia.easing:library:2.1@aar"
     implementation "com.daimajia.androidanimations:library:2.3@aar"
+
+    // Timber https://github.com/JakeWharton/timber
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 
     androidExtensions {
         experimental = true

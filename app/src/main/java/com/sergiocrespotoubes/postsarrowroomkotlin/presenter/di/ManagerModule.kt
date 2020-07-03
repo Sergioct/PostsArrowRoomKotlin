@@ -2,6 +2,8 @@ package com.sergiocrespotoubes.postsarrowroomkotlin.presenter.di
 
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.managers.PictureManager
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.managers.PictureManagerImpl
+import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.managers.UtilsManager
+import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.managers.UtilsManagerImpl
 import org.koin.dsl.module
 
 /**
@@ -11,4 +13,5 @@ import org.koin.dsl.module
  */
 val managerModule = module {
 	factory<PictureManager> { PictureManagerImpl() }
+	factory<UtilsManager> { UtilsManagerImpl(get()) }
 }

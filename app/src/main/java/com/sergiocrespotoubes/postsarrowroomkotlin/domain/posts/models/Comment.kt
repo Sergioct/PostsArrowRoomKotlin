@@ -8,6 +8,9 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Name
  *     SergioCrespoToubes@gmail.com
  *     www.SergioCrespoToubes.com
  */
+
+typealias CommentId = String
+
 data class Comment (
 	val name: Name,
 	val email: Email,

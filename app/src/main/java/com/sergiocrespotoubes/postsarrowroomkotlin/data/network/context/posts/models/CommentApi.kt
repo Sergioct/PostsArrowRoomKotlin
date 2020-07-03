@@ -1,6 +1,8 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.models
 
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Comment
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.CommentId
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.PostId
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Email
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Name
 
@@ -9,9 +11,6 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Name
  *     SergioCrespoToubes@gmail.com
  *     www.SergioCrespoToubes.com
  */
-
-typealias PostId = String
-typealias CommentId = String
 
 data class CommentApi(
 	val postId: PostId,

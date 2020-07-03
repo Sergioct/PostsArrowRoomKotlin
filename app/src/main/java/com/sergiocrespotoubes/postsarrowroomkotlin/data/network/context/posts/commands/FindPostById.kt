@@ -1,7 +1,8 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.commands
 
 import arrow.fx.IO
-import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.models.PostApi
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.PostId
 
 /**
  * Created by Sergio Crespo Toubes on 10/02/2020.
@@ -14,10 +15,5 @@ interface FindPostById {
 		const val URL = "/places"
 	}
 
-	fun findPostById(): IO<Response>
-
-	data class Response(
-		val posts: List<PostApi> = emptyList()
-	)
-
+	fun findPostById(postId: PostId): IO<Post>
 }

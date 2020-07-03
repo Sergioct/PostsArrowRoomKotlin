@@ -6,10 +6,11 @@ import arrow.fx.IO
 import arrow.fx.extensions.fx
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.db.dao.PostsDao
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.PostsService
+import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.commands.FindPostById
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.PostsRepository
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Comment
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
-import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.Resource
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.PostId
 
 /**
  * Created by Sergio Crespo Toubes on 09/03/2020.
@@ -22,20 +23,21 @@ class PostsRepositoryImpl(
 	private val postsService: PostsService
 ): PostsRepository {
 
-	override fun findPosts(): IO<LiveData<List<Post>>> = IO.fx {
+	override fun findPosts(): IO<List<Post>> = IO.fx {
 		val findPostsResponse = !postsService.findPosts()
 		val postsDb = findPostsResponse.posts
-		val listDb = postsDb.map { it.toDb() }
-		postsDao.insert(listDb)
-
-		val postsDbLiveData = postsDao.findPosts()
-		val listPosts = Transformations.map(postsDbLiveData) { listPostDb ->
-			listPostDb.map { it.toDomain() }
-		}
+		val listPosts = postsDb.map { it.toDomain() }
 		listPosts
 	}
 
-	override fun findPostById(): IO<Post> {
+	override fun findPostsDB(): LiveData<List<Post>> {
+		val postsDbLiveData = postsDao.findPosts()
+		return Transformations.map(postsDbLiveData) { listPostDb ->
+			listPostDb.map { it.toDomain() }
+		}
+	}
+
+	override fun findPostById(postId: PostId): IO<Post> = IO.fx {
 		TODO("Not yet implemented")
 	}
 

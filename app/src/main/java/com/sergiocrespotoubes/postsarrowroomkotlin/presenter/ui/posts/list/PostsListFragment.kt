@@ -42,9 +42,6 @@ class PostsListViewModel(
     private fun loadPosts() {
 		postsResourceObs.value = Resource.loading()
         findPosts.invoke().continueOn(Dispatchers.Main).effectMap { posts ->
-				val x: LiveData<Resource<List<Post>, Throwable>> = Transformations.map(posts) { listPostDb ->
-					Resource.success(listPostDb)
-				}
 				postsResourceObs.value = Resource.success(posts)
             }.handleError {
 				postsResourceObs.value = Resource.error(it)
@@ -85,7 +82,7 @@ class PostsListFragment : Fragment() {
     }
 
     private fun loadObservers() {
-        //vModel.postsResourceObs.observe(requireActivity(), Observer(::loadSurgerySpecialtyResource))
+        vModel.postsResourceObs.observe(requireActivity(), Observer(::loadPostsResource))
     }
 
     override fun onResume() {
@@ -93,7 +90,7 @@ class PostsListFragment : Fragment() {
         vModel.onResume()
     }
 
-    private fun loadSurgerySpecialtyResource(servicesGroupSpecialtyResource: Resource<List<Post>, Throwable>) {
+    private fun loadPostsResource(servicesGroupSpecialtyResource: Resource<List<Post>, Throwable>) {
         when (servicesGroupSpecialtyResource) {
             is Resource.Success -> {
                 loadPosts(servicesGroupSpecialtyResource.value)
@@ -122,8 +119,4 @@ class PostsListFragment : Fragment() {
 			vss_posts.success()
         }
     }
-
-    /*private fun laodPost(postModel: PostModel) {
-
-    }*/
 }

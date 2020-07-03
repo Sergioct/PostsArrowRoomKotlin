@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.sergiocrespotoubes.postsarrowroomkotlin.R
-import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.managers.PictureManager
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.posts.PostsActivity
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.util.live_data.EventObserver
 import kotlinx.android.synthetic.main.activity_splash.*
-import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import splitties.activities.start
 

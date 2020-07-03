@@ -1,6 +1,6 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.use_case
 
-import arrow.fx.IO
+import androidx.lifecycle.LiveData
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.PostsRepository
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
 
@@ -9,8 +9,8 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
  *     SergioCrespoToubes@gmail.com
  *     www.SergioCrespoToubes.com
  */
-class FindAnswers(private val postsRepository: PostsRepository) {
-	fun invoke(): IO<List<Post>> {
-		return postsRepository.findAnswersFromAPost()
+class FindPostsDB(private val postsRepository: PostsRepository) {
+	fun invoke() : LiveData<List<Post>>  {
+		return postsRepository.findPostsDB()
 	}
 }

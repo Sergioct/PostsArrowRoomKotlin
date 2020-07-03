@@ -2,12 +2,10 @@ package com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.posts
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.sergiocrespotoubes.postsarrowroomkotlin.R
-import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.splash.SplashViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.include_appbar.*
 
 /**

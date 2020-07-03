@@ -11,9 +11,7 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
  *     www.SergioCrespoToubes.com
  */
 class FindPosts(private val postsRepository: PostsRepository) {
-
-	fun invoke() : IO<LiveData<List<Post>>>  {
+	fun invoke() : IO<List<Post>>  {
 		return postsRepository.findPosts()
 	}
-
 }

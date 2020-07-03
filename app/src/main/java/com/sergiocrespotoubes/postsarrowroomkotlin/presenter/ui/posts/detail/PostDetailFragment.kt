@@ -1,13 +1,5 @@
 package com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.posts.detail
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.sergiocrespotoubes.postsarrowroomkotlin.R
-import org.koin.core.parameter.parametersOf
-
 /**
  * Created by Sergio Crespo Toubes on 14/01/2020.
  *     SergioCrespoToubes@gmail.com
