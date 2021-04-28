@@ -19,8 +19,6 @@ Yapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/network/Base
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-
-Oapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/AppApplication.kt,7\5\7592e80c9fc932015a3c41050122b19750bf7776
 ò
 happ/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/network/context/posts/PostsService.kt,0\6\0696a0544400aad57165c9e0cdb9b77b8c5200ae
 é
@@ -37,8 +35,6 @@ aapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/ui/post
 [app/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/di/NetworkModule.kt,9\0\90a46d2e0fb0355ae5765917f4b8f6491478b164
 Ö
 Uapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/db/dao/PostsDao.kt,0\c\0c924bbc820f9905174f6b0ee23ffc63cc9db3ed
-ì
-capp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/repository/PostRepositoryImpl.kt,a\2\a2b35c6386c4d8d9d54afa3e550e52f34d330c86
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -52,8 +48,6 @@ R
 "app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
 S
 #app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
-R
-"app/src/main/res/values/styles.xml,f\7\f79cc2688e29fcbc286fda14ae07b27c9e83690f
 ù
 mapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/network/context/posts/models/CommentApi.kt,9\f\9f062062878feb1b4e9b3204cb8f1a3c7357e9a9
 å
@@ -82,3 +76,43 @@ Xapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/db/entities/
 mapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/ui/posts/detail/PostDetailFragment.kt,0\6\068add9ae3dfb68cbd3d35113dac1621434327eb
 û
 napp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/ui/posts/detail/PostDetailViewModel.kt,d\3\d3bd8fb34fa5b85ee504e02fdd324e3943d19dae
+A
+app/.editorconfig,c\4\c4ef0ff77f4b486b0fc5df3f6141dc6cd07e31e3
+î
+dapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/ui/splash/SplashViewModel.kt,7\d\7d368f45a039a2e578e5982112bfbce81b0556a1
+y
+Iapp/src/test/java/com/sergiocrespotoubes/postsarrowroomkotlin/BaseTest.kt,2\9\29079a428094c05d27e7f50d2abf8e489838bb81
+{
+Kapp/src/test/java/com/sergiocrespotoubes/postsarrowroomkotlin/MockkUtils.kt,2\8\28a1bcd5957dc6d12ae7ddf1bb788eaeae2f801c
+B
+analysis_script.sh,a\8\a83c94125cfc3eaad0f552cc249f750c12962157
+è
+_app/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/util/live_data/Event.kt,e\f\ef4827f7c0620ff81a7a82a30b1cab150a7f2883
+à
+Xapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/util/Resource.kt,f\7\f72cb620637d96ef8e8c0fd906e74bfc558b4359
+è
+_app/src/androidTest/java/com/sergiocrespotoubes/postsarrowroomkotlin/ExampleInstrumentedTest.kt,2\6\26fded73a63bb6a5246ffdc66082fa8c319c169a
+é
+^app/src/test/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/ui/posts/SplashTest.kt,5\a\5a9351e7b4861d08efa63446d21b9618cf41c2f8
+î
+dapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/repository/PostsRepositoryImpl.kt,b\b\bb2ddcad986121a9036113820dcdcf3d3bac4a9a
+`
+0app/src/main/res/navigation/navigation_posts.xml,8\f\8fc01b57afe41fc1f7aeddc9e23b1f119ddc8b46
+Å
+Qapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/PostsApplication.kt,f\7\f79a8cae9dbc99a1e5283c45b003f4b8235dce7e
+ã
+[app/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/di/ManagerModule.kt,6\6\66f481a69c321066ee66fa77bf9545673808a10e
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+ê
+`app/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/presenter/managers/UtilsManager.kt,f\4\f4ec359cbca8c1e098e1e0490f0987b1a87e9193
+í
+bapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/domain/posts/use_case/FindPostsDB.kt,5\f\5f1297d06a9b470427ec73ec2646de473a338399
+ú
+lapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/network/utils/EffectCallAdapterFactory.kt,a\d\ad2296c57d9e9dc0247d6728fb8d6922cc17f992
+ë
+aapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/network/utils/IOCallAdapter.kt,a\a\aad07c54a2e1d32be4f6407acc4eb24a072c8b8d
+î
+dapp/src/main/java/com/sergiocrespotoubes/postsarrowroomkotlin/data/network/utils/ResponseCallback.kt,5\d\5dff4d7111b6d61fc3d5008f459e688c29f850ab
+Ä
+Papp/src/test/java/com/sergiocrespotoubes/postsarrowroomkotlin/ExampleUnitTest.kt,0\2\02095577922096142bcfe6e851ce40116dcd98db
