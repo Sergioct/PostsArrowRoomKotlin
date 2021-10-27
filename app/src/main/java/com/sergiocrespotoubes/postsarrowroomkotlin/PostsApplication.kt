@@ -23,6 +23,7 @@ class PostsApplication : Application() {
 		super.onCreate()
 
 		initKoin()
+		initTimber()
 	}
 
 	private fun initKoin() {

@@ -5,7 +5,7 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.PostsServiceImpl
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.network.context.posts.PostsService
 import com.sergiocrespotoubes.postsarrowroomkotlin.data.repository.PostsRepositoryImpl
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.PostsRepository
-import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.use_case.FindAnswers
+import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.use_case.GetAnswers
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.use_case.FindPosts
 import com.sergiocrespotoubes.postsarrowroomkotlin.presenter.ui.posts.list.PostsListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -24,5 +24,5 @@ val postsModule = module {
 	factory<PostsRepository> { PostsRepositoryImpl(get(), get()) }
 	factory<PostsService> { PostsServiceImpl() }
 	factory { FindPosts(get()) }
-	factory { FindAnswers(get()) }
+	factory { GetAnswers(get()) }
 }

@@ -5,6 +5,7 @@ import arrow.fx.IO
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Comment
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.Post
 import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.PostId
+import kotlinx.coroutines.flow.Flow
 
 /**
  * Created by Sergio Crespo Toubes on 11/03/2020.
@@ -12,9 +13,9 @@ import com.sergiocrespotoubes.postsarrowroomkotlin.domain.posts.models.PostId
  *     www.SergioCrespoToubes.com
  */
 interface PostsRepository {
-	fun findPosts(): IO<List<Post>>
-	fun findPostsDB(): LiveData<List<Post>>
-	fun findPostById(postId: PostId): IO<Post>
-	fun findCommentsFromPosts(): IO<List<Comment>>
-	fun findAnswersFromAPost(): IO<List<Post>>
+	fun getPosts(): Flow<List<Post>>
+	fun getPostsDB(): Flow<List<Post>>
+	fun getPostById(postId: PostId): Flow<Post>
+	fun getCommentsFromPosts(): Flow<List<Comment>>
+	fun getAnswersFromAPost(): Flow<List<Post>>
 }
